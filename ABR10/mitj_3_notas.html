@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de mitjana de notes</title>
+</head>
+<body>
+    <h1>Calculadora de mitjana de notes</h1>
+    <div>
+        <label for="nota1">Introdueix la primera nota:</label>
+        <input type="number" id="nota1" min="0" max="10" step="0.01">
+    </div>
+    <div>
+        <label for="nota2">Introdueix la segona nota:</label>
+        <input type="number" id="nota2" min="0" max="10" step="0.01">
+    </div>
+    <div>
+        <label for="nota3">Introdueix la tercera nota:</label>
+        <input type="number" id="nota3" min="0" max="10" step="0.01">
+    </div>
+    <button onclick="calcularMitjana()">Calcular mitjana</button>
+    <div id="resultat"></div>
+
+    <script>
+        function calcularMitjana() {
+            // Obtindre les notes introduïdes per l'usuari
+            var nota1 = parseFloat(document.getElementById("nota1").value);
+            var nota2 = parseFloat(document.getElementById("nota2").value);
+            var nota3 = parseFloat(document.getElementById("nota3").value);
+
+            // Calcular la mitjana de les notes
+            var mitjana = (nota1 + nota2 + nota3) / 3;
+
+            // Mostrar el resultat en pantalla
+            document.getElementById("resultat").innerHTML = "<p>La mitjana de les notes és: " + mitjana.toFixed(2) + "</p>";
+        }
+    </script>
+</body>
+</html>
